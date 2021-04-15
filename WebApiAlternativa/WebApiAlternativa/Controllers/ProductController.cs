@@ -41,17 +41,7 @@ namespace WebApiAlternativa.Controllers
         [HttpDelete("{id}")]
         public void Delete(long id)
         {
-            Product product = _productBusiness.GetById(id);
-
-            if(product != null)
-            {
-                if (product?.categoryId == null)
-                {
-                    _productBusiness.Delete(id);
-                }
-            }
-
-            
+            _productBusiness.Delete(id);
         }
 
     }

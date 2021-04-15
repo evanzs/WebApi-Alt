@@ -24,7 +24,16 @@ namespace WebApiAlternativa.Data.Business.Implementaions
         }
         public void Delete(long id)
         {
-            _repository.Delete(id);
+            Product product = _repository.GetById(id);
+
+            if (product != null)
+            {
+                if (product?.categoryId == null)
+                {
+                    _repository.Delete(id);
+                }
+            }
+            
         }
         public Product GetById(long id)
         {
