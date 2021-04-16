@@ -13,12 +13,12 @@
 | Pacote  | NuGet Latest |
 | :---         |          ---: |
 | Evolve   |[![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Evolve)|
-| EntityFrameWorkCore  | [![npm version](https://img.shields.io/nuget/v/Microsoft.EntityFrameworkCore)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore)   |
+| EntityFrameWorkCore  | [![npm version](https://img.shields.io/nuget/v/Microsoft.EntityFrameworkCore)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore)|   
 | Swashbuckle.AspNetCore  | [![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Swashbuckle.AspNetCore/)   |
 
 
 
-<h2 align="center">Sobre banco: </h2>
+<h2 align="center">Sobre o banco: </h2>
 
 <h3>Scripts das Tabelas usadas:</h3>
 <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/scriptProduto.png" />
