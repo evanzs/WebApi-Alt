@@ -20,7 +20,8 @@ Pacotes Usados:
 
 Sobre banco:
 
-Scripts das Tabelas usadas:
+<p>Scripts das Tabelas usadas:</p>
+
 Produtos
 <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/scriptProduto.png" />
   
