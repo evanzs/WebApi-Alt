@@ -22,6 +22,7 @@ Pacotes Usados:
 <h2 align="center">Sobre o banco: </h2>
 
 <h3>Scripts das Tabelas usadas:</h3>
+<p>Caminho <a href="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/scripts/scriptCategorias.sql#L1"> WebApi-Alt/blob/main/WebApiAlternativa/scripts/scriptCategorias.sql </a>  </p>
 <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/scriptProduto.png" />
  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/scriptCategoria.png" />
  
