@@ -13,5 +13,5 @@ Pacotes Usados:
 | Pacote  | Downloads | NuGet Latest |
 | :---         |     :---:      |          ---: |
 | Evolve   | git status     |[![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Evolve)|
-| EntityFrameWorkCore     | git diff       | git diff      |
-| Swashbuckle.AspNetCore     | git diff       | git diff      |
+| EntityFrameWorkCore     | git diff       | [![npm version](https://img.shields.io/nuget/v/Microfot)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore)   |
+| Swashbuckle.AspNetCore     | git diff       | [![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Evolve)   |
