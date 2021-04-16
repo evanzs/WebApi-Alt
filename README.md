@@ -11,10 +11,10 @@
 <p>Banco Usaddo :  <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads">SQL SERVER</a></p>
 <p>Pacotes Usados:</p>
 | Pacote  | NuGet Latest |
-| :---  |---: |
+| :---         |          ---: |
 | Evolve   |[![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Evolve)|
-| EntityFrameWorkCore  | [![npm version](https://img.shields.io/nuget/v/Microsoft.EntityFrameworkCore)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore)|
-| Swashbuckle.AspNetCore  | [![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Swashbuckle.AspNetCore)|
+| EntityFrameWorkCore  | [![npm version](https://img.shields.io/nuget/v/Microsoft.EntityFrameworkCore)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore)   |
+| Swashbuckle.AspNetCore  | [![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Swashbuckle.AspNetCore/)   |tCore)|
 
 
 
