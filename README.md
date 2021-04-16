@@ -7,11 +7,30 @@
 
 Requerimentos
 
-Criado em .NET 3.1 
-
+Criado em <a href="https://dotnet.microsoft.com/download">.NET 3.1 </a> 
+Banco Usasdo :  <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads">SQL SERVER</a>
 Pacotes Usados:
 | Pacote  | NuGet Latest |
 | :---         |          ---: |
 | Evolve   |[![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Evolve)|
 | EntityFrameWorkCore  | [![npm version](https://img.shields.io/nuget/v/Microsoft.EntityFrameworkCore)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore)   |
 | Swashbuckle.AspNetCore  | [![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Swashbuckle.AspNetCore/)   |
+
+
+
+Sobre banco:
+
+<p>Scripts das Tabelas usadas:</p>
+<img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/scriptProduto.png" />
+ <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/scriptCategoria.png" />
+ 
+ 
+<p>String de conexão para banco local</p>
+ <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/stringCone.png" />
+ 
+<p>Configuração do banco SQL Server na Startup</p>
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/startupCone.png" />
+
+
+<p>ROTAS DA API</p>
+ <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/Rotas.png" />   
