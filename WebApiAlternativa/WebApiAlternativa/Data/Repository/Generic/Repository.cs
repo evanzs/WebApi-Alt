@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using WebApiAlternativa.Context;
 using WebApiAlternativa.Entities;
 
@@ -26,13 +25,14 @@ namespace WebApiAlternativa.Data.Repository.Generic
         }
         public T Update(T entity)
         {
-            var result = dataset.SingleOrDefault(result => result.id.Equals(entity.id));
+            var result = dataset.SingleOrDefault(result => result.Id.Equals(entity.Id));
             if(result != null)
             {
                 try
                 {
                     _context.Entry(result).State = EntityState.Modified;
                     _context.SaveChanges();
+
                     return entity;
                 }
                 catch(Exception)
@@ -46,18 +46,17 @@ namespace WebApiAlternativa.Data.Repository.Generic
             }
           
         }
-        public T GetById(long id)
+        public T GetById(long Id)
         {
-            return dataset.SingleOrDefault(result => result.id.Equals(id));
-
+            return dataset.SingleOrDefault(result => result.Id.Equals(Id));
         }
         public List<T> GetAll()
         {
             return _context.Set<T>().ToList();
         }       
-        public void Delete(long id)
+        public void Delete(long Id)
         {
-            var result = dataset.SingleOrDefault(result => result.id.Equals(id));
+            var result = dataset.SingleOrDefault(result => result.Id.Equals(Id));
             if (result != null)
             {
                 try

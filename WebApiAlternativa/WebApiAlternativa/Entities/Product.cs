@@ -9,12 +9,12 @@ namespace WebApiAlternativa.Entities
     [Table("Produtos")]
     public class Product:BaseEntity 
     {  
-        public decimal? value { get; set; }
-        public string brand { get; set; }
+        public decimal? Value { get; set; }
+        public string Brand { get; set; }
 
         [ForeignKey("Categorias")]      
         [Column("category_id")]
-        public long? categoryId { get; set; }
-        public virtual Category category { get; set; }
+        public long? CategoryId { get; set; }
+        public virtual Category Category { get; set; }
 }
 }

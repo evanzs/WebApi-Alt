@@ -23,13 +23,13 @@ namespace WebApiAlternativa.Data.Business.Implementaions
         {
             return _repository.Update(category);
         }
-        public void Delete(long id)
+        public void Delete(long Id)
         {
-            _repository.Delete(id);
+            _repository.Delete(Id);
         }
-        public Category GetById(long id)
+        public Category GetById(long Id)
         {
-            return _repository.GetById(id);
+            return _repository.GetById(Id);
         }
         public List<Category> GetAll()
         {

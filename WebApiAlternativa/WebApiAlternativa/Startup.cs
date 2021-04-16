@@ -4,12 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using WebApiAlternativa.Context;
 using WebApiAlternativa.Data.Repository.Generic;
@@ -48,13 +45,14 @@ namespace WebApiAlternativa
 
             });
 
+            //add swagger ao projeto
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "WebApi Alternativa Sistema Teste",
+                    Title = "API .NET 3.1 Para Crud de Categoria e Produto",
                     Version = "v1",
-                    Description = "API feita para testa de BackEnd da Aternativa Sistemas",
+                    Description = "API feita para o teste de Backend da Aternativa Sistemas",
                     Contact =  new OpenApiContact
                     {
                         Name = "Evandro Fernandes",
@@ -97,9 +95,8 @@ namespace WebApiAlternativa
             var option = new RewriteOptions();
             //redirencionando para pagina do swagger
             option.AddRedirect("^$", "swagger");
+
             app.UseRewriter(option);
-
-
 
             app.UseAuthorization();
 

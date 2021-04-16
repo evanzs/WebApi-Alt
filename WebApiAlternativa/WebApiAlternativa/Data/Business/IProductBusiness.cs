@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using WebApiAlternativa.Entities;
 
 namespace WebApiAlternativa.Data.Bussiness
@@ -8,8 +7,8 @@ namespace WebApiAlternativa.Data.Bussiness
     {
         Product Add(Product product);
         Product Update(Product product);
-        void Delete(long id);
-        Product GetById(long id);
+        void Delete(long Id);
+        Product GetById(long Id);
         List<Product> GetAll();
     }
 }

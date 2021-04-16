@@ -28,10 +28,10 @@ namespace WebApiAlternativa.Controllers
         {
             return Ok(_categoryBusiness.GetAll());
         }
-        [HttpGet("{id}")]
-        public IActionResult Get(long id)
+        [HttpGet("{Id}")]
+        public IActionResult Get(long Id)
         {
-            return Ok(_categoryBusiness.GetById(id));
+            return Ok(_categoryBusiness.GetById(Id));
         }
         [HttpPost]
         public IActionResult Post(Category category)
@@ -43,10 +43,10 @@ namespace WebApiAlternativa.Controllers
         {
             return Ok(_categoryBusiness.Update(category));
         }
-        [HttpDelete("{id}")]
-        public void Delete(long id)
+        [HttpDelete("{Id}")]
+        public void Delete(long Id)
         {
-            _categoryBusiness.Delete(id);
+            _categoryBusiness.Delete(Id);
         }
 
     }
