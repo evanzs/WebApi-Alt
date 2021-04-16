@@ -21,9 +21,16 @@ Pacotes Usados:
 Sobre banco:
 
 <p>Scripts das Tabelas usadas:</p>
-
-Produtos
 <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/scriptProduto.png" />
-  
- Categorias
  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/scriptCategoria.png" />
+ 
+ 
+<p>String de conexão para banco local</p>
+ <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/stringCone.png" />
+ 
+<p>Configuração do banco SQL Server na Startup</p>
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/startupCone.png" />
+
+
+<p>ROTAS DA API</p>
+ <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/Rotas.png" />   
