@@ -12,6 +12,6 @@ Criado em .NET 3.1
 Pacotes Usados:
 | Pacote  | Downloads | NuGet Latest |
 | :---         |     :---:      |          ---: |
-| Evolve   | git status     | /nuget/dt/: Evolve   |
+| Evolve   | git status     | nuget/dt/: Evolve   |
 | EntityFrameWorkCore     | git diff       | git diff      |
 | Swashbuckle.AspNetCore     | git diff       | git diff      |
