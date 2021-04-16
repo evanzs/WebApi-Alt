@@ -5,11 +5,11 @@ namespace WebApiAlternativa.Entities
 {
     public class BaseEntity
     {
-        [Column("{id}")]
+        [Column("id")]
         public long Id { get; set; }
-        [Column("{name}")]
+        [Column("name")]
         public string Name { get; set; }
-        [Column("{description}")]
+        [Column("description")]
         public string Description { get; set; }
     }
 }

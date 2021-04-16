@@ -19,19 +19,24 @@ namespace WebApiAlternativa
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Environment { get; }
+        public Startup(IConfiguration configuration,IWebHostEnvironment environment)
         {
             Configuration = configuration;
+            Environment = environment;
         }
 
-        public IConfiguration Configuration { get; }
+      
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            string stringConexao = Configuration.GetConnectionString("Connection");
+        {         
+
             services.AddControllers();
 
+            //string de conecao com o banco
+            string stringConexao = Configuration.GetConnectionString("Connection");
             services.AddDbContext<AlternativaContext>(c =>
             {
                 try
@@ -44,6 +49,12 @@ namespace WebApiAlternativa
                 }
 
             });
+
+            // definindo migrations
+            if (Environment.IsDevelopment())
+            {
+                MigrateDatabase(stringConexao);
+            }
 
             //add swagger ao projeto
             services.AddSwaggerGen(c =>
@@ -70,7 +81,6 @@ namespace WebApiAlternativa
 
 
         }
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -103,7 +113,29 @@ namespace WebApiAlternativa
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
+            });           
+        }
+        // metodo para add e definir migrations
+        private void MigrateDatabase(string stringConexao)
+        {
+           try
+           { 
+                var cnx = new Microsoft.Data.SqlClient.SqlConnection(stringConexao);
+
+                //iniciando evolve com a conexao
+                //Nota: aqui seria melhor usar log
+                var evolve = new Evolve.Evolve(cnx, msg => Console.WriteLine(msg))
+                {
+                    Locations = new[] { "db/migrations" },
+                    IsEraseDisabled = true,
+                };
+                evolve.Migrate();
+           }
+           catch(Exception ex)
+           {
+                Console.WriteLine(ex.Message);
+                throw;
+           }
         }
     }
 }

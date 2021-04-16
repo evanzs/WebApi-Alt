@@ -30,7 +30,7 @@ namespace WebApiAlternativa.Data.Repository.Generic
             {
                 try
                 {
-                    _context.Entry(result).State = EntityState.Modified;
+                    _context.Entry(result).CurrentValues.SetValues(entity);
                     _context.SaveChanges();
 
                     return entity;
@@ -48,6 +48,7 @@ namespace WebApiAlternativa.Data.Repository.Generic
         }
         public T GetById(long Id)
         {
+
             return dataset.SingleOrDefault(result => result.Id.Equals(Id));
         }
         public List<T> GetAll()
