@@ -5,11 +5,11 @@
 
 
 
-Requerimentos
+<h2>Requerimentos</h2>
 
 Criado em <a href="https://dotnet.microsoft.com/download">.NET 3.1 </a> 
-Banco Usasdo :  <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads">SQL SERVER</a>
-Pacotes Usados:
+Banco Usaddo :  <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads">SQL SERVER</a>
+<p>Pacotes Usados:</p>
 | Pacote  | NuGet Latest |
 | :---         |          ---: |
 | Evolve   |[![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Evolve)|
