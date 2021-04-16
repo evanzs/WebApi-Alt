@@ -8,7 +8,7 @@
 <h2>Requerimentos</h2>
 
 <p>Desenvolvido em <a href="https://dotnet.microsoft.com/download">.NET 3.1 </a>  </p>
-<p>Banco Usaddo :  <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads">SQL SERVER</a></p>
+<p>Banco Usado :  <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads">SQL SERVER</a></p>
 Pacotes Usados:
 
 | Pacote  | NuGet Latest |
