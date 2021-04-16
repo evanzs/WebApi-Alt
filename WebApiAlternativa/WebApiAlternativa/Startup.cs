@@ -29,7 +29,7 @@ namespace WebApiAlternativa
 
             services.AddControllers();
 
-            //string de conecao com o banco
+            //string de conexao com o banco
             string stringConexao = Configuration.GetConnectionString("Connection");
             services.AddDbContext<AlternativaContext>(c =>
             {
