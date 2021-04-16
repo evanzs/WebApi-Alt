@@ -9,7 +9,7 @@
 
 <p>Desenvolvido em <a href="https://dotnet.microsoft.com/download">.NET 3.1 </a>  </p>
 <p>Banco Usaddo :  <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads">SQL SERVER</a></p>
-<p>Pacotes Usados:</p>
+Pacotes Usados:
 | Pacote  | NuGet Latest |
 | :---         |          ---: |
 | Evolve   |[![npm version](https://img.shields.io/nuget/v/Evolve)](https://www.nuget.org/packages/Evolve)|
