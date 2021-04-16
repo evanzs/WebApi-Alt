@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,9 +22,7 @@ namespace WebApiAlternativa
         {
             Configuration = configuration;
             Environment = environment;
-        }
-
-      
+        }      
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -77,9 +72,6 @@ namespace WebApiAlternativa
             services.AddScoped<ICategoryBusiness, CategoryBusiness>();
             services.AddScoped<IProductBusiness, ProductBusiness>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-
-
-
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -98,7 +90,7 @@ namespace WebApiAlternativa
             app.UseSwaggerUI(c =>
             {
                 //definindo PATH para o swagger
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi Alternativa Sistema Teste");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi Alternativa Sistemas Teste");
             });
 
             //Definindo configuracoes da pagina
@@ -121,7 +113,6 @@ namespace WebApiAlternativa
            try
            { 
                 var cnx = new Microsoft.Data.SqlClient.SqlConnection(stringConexao);
-
                 //iniciando evolve com a conexao
                 //Nota: aqui seria melhor usar log
                 var evolve = new Evolve.Evolve(cnx, msg => Console.WriteLine(msg))

@@ -18,10 +18,18 @@ namespace WebApiAlternativa.Data.Repository.Generic
         }
         public T Add(T entity)
         {
-             dataset.Add(entity);
-            _context.SaveChanges();
+            try
+            {
+                dataset.Add(entity);
+                _context.SaveChanges();
 
-            return entity;
+                return entity;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+           
         }
         public T Update(T entity)
         {
@@ -43,17 +51,15 @@ namespace WebApiAlternativa.Data.Repository.Generic
             else
             {
                 return null;
-            }
-          
+            }          
         }
         public T GetById(long Id)
         {
-
             return dataset.SingleOrDefault(result => result.Id.Equals(Id));
         }
         public List<T> GetAll()
         {
-            return _context.Set<T>().ToList();
+            return dataset.ToList();
         }       
         public void Delete(long Id)
         {
@@ -70,7 +76,6 @@ namespace WebApiAlternativa.Data.Repository.Generic
                     throw;
                 }
             }
-
         }
     }
 }

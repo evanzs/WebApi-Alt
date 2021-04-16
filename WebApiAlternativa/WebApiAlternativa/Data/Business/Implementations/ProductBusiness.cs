@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using WebApiAlternativa.Data.Bussiness;
 using WebApiAlternativa.Data.Repository.Generic;
 using WebApiAlternativa.Entities;
@@ -9,25 +8,15 @@ namespace WebApiAlternativa.Data.Business.Implementaions
     public class ProductBusiness : IProductBusiness
     {
         private readonly IRepository<Product> _repository;
-        private readonly IRepository<Category> _repositoryCategory;
-        public ProductBusiness (IRepository<Product> repository,IRepository<Category> repositoryCategory)
+        private readonly IRepository<Category> _categoryRepository;
+        public ProductBusiness (IRepository<Product> repository,IRepository<Category> categoryRepository)
         {
             _repository = repository;
-            _repositoryCategory = repositoryCategory;
+            _categoryRepository = categoryRepository;
         }
 
         public Product Add(Product product)
-        {
-            if ( product.CategoryId != null)
-            {
-                //long categoryId = (long)product.CategoryId;
-                //Category category = _repositoryCategory.GetById(categoryId);
-                //if (category != null)
-                //{
-                //    return "Erro"
-                //}
-
-            }
+        {           
             return _repository.Add(product);
         }
         public Product Update(Product product)
@@ -36,16 +25,7 @@ namespace WebApiAlternativa.Data.Business.Implementaions
         }
         public void Delete(long Id)
         {
-            Product product = _repository.GetById(Id);
-
-            if (product != null)
-            {
-                if (product?.CategoryId == null)
-                {
-                    _repository.Delete(Id);
-                }
-            }
-            
+            _repository.Delete(Id);           
         }
         public Product GetById(long Id)
         {
@@ -54,14 +34,13 @@ namespace WebApiAlternativa.Data.Business.Implementaions
             if (product == null)
             {
                 return null;
-            }               
-
-            //verifica ta vinculado a categoria
+            }
+            //verifica se há vinculo com categoria
             //se sim: inclue categoria em produto
             if(product.CategoryId != null)
             {
                 long categoryId = (long)product.CategoryId;
-                product.Category = _repositoryCategory.GetById(categoryId);
+                product.Category = _categoryRepository.GetById(categoryId);
             }
 
             return product;
@@ -79,7 +58,7 @@ namespace WebApiAlternativa.Data.Business.Implementaions
                 if (product.CategoryId != null)
                 {
                     long categoryId = (long)product.CategoryId;
-                    product.Category = _repositoryCategory.GetById(categoryId);
+                    product.Category = _categoryRepository.GetById(categoryId);
                 }
             }
             return products;

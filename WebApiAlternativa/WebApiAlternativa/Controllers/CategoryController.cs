@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using WebApiAlternativa.Data.Bussiness;
-using WebApiAlternativa.Data.Repository.Generic;
 using WebApiAlternativa.Entities;
 
 namespace WebApiAlternativa.Controllers
@@ -44,9 +37,14 @@ namespace WebApiAlternativa.Controllers
             return Ok(_categoryBusiness.Update(category));
         }
         [HttpDelete("{Id}")]
-        public void Delete(long Id)
+        public IActionResult Delete(long Id)
         {
-            _categoryBusiness.Delete(Id);
+            if (_categoryBusiness.Delete(Id))
+            {
+                return Ok();
+            }
+
+            return Conflict();
         }
 
     }
