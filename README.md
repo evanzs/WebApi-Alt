@@ -53,5 +53,5 @@ Pacotes Usados:
 
 Entre em contato!
 
- [![Linkedin Badge](https://img.shields.io/badge/-Evandro F.-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/evandro-fernandin/)](https://www.linkedin.com/in/evandro-fernandin/) 
+ [![Linkedin Badge](https://img.shields.io/badge/-Evandro-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/evandro-fernandin/)](https://www.linkedin.com/in/evandro-fernandin/) 
 [![Gmail Badge](https://img.shields.io/badge/-evandrofidk@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:evandrofidk@gmail.com)](mailto:evandrofidk@gmail.com)
