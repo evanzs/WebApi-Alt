@@ -29,7 +29,7 @@ Pacotes Usados:
  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/scriptCategoria.png" />
  
  
-<h3>String de conexão para banco local</h3>
+<h3>String de conexão para o banco local</h3>
 <p>Caminho <a href="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/WebApiAlternativa/appsettings.json#L10">WebApiAlternativa/WebApiAlternativa/appsettings.json </a>  </p>
  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/stringCone.png" />
  
