@@ -5,8 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
-    <Folder Include="ViewModels\" />
+    <Compile Remove="Migrations\**" />
+    <Compile Remove="ViewModels\**" />
+    <Content Remove="Migrations\**" />
+    <Content Remove="ViewModels\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="Migrations\**" />
+    <None Remove="ViewModels\**" />
   </ItemGroup>
 
   <ItemGroup>
