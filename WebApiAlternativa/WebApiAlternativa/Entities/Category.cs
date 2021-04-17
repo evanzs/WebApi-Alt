@@ -2,7 +2,7 @@
 
 namespace WebApiAlternativa.Entities
 {
-    [Table("Categorias")]
+    [Table("Categoria")]
     public class Category :BaseEntity
     {        
     }

@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 CREATE TABLE Produto(
  id bigint identity (0,1) primary key, 
  name varchar(20),
