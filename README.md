@@ -28,11 +28,12 @@ Pacotes Usados:
 
  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/scriptCategoria.png" />
  
+ <p><h3>NOTA:</h3> esse script executa automaticamente criando as tabelas se a string de conexão,abaixo, estiver configurada corretamente </p>
  
 <h3>String de conexão para o banco local</h3>
 <p>Caminho <a href="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/WebApiAlternativa/appsettings.json#L10">WebApiAlternativa/WebApiAlternativa/appsettings.json </a>  </p>
  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/stringCone.png" />
-<p><h3>NOTA:</h3> esse script executa automaticamente criando as tabelas se a string de conexão,abaixo, estiver configurada corretamente </p>
+
 <h3>Configuração do banco SQL Server na Startup</h3>
 <p>Caminho <a href="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/WebApiAlternativa/Startup.cs#L33"> WebApi-Alt/blob/main/WebApiAlternativa/WebApiAlternativa/Startup.cs </a>  </p>
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://github.com/evanzs/WebApi-Alt/blob/main/WebApiAlternativa/imgs/startupCone.png" />
