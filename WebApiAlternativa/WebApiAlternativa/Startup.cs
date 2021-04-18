@@ -7,8 +7,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using WebApiAlternativa.Context;
 using WebApiAlternativa.Data.Repository.Generic;
-using WebApiAlternativa.Data.Bussiness;
-using WebApiAlternativa.Data.Business.Implementaions;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Rewrite;
 
@@ -67,9 +65,7 @@ namespace WebApiAlternativa
                 });
             });
 
-            //dependencias
-            services.AddScoped<ICategoryBusiness, CategoryBusiness>();
-            services.AddScoped<IProductBusiness, ProductBusiness>();
+            //dependencias       
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         }
        

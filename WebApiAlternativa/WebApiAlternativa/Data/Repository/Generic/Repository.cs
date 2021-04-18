@@ -18,40 +18,24 @@ namespace WebApiAlternativa.Data.Repository.Generic
         }
         public T Add(T entity)
         {
-            try
-            {
-                dataset.Add(entity);
-                _context.SaveChanges();
+            dataset.Add(entity);
+            _context.SaveChanges();
 
-                return entity;
-            }
-            catch(Exception)
-            {
-                throw;
-            }
-           
+            return entity;
         }
+       
         public T Update(T entity)
         {
             var result = dataset.SingleOrDefault(result => result.Id.Equals(entity.Id));
-            if(result != null)
-            {
-                try
-                {
-                    _context.Entry(result).CurrentValues.SetValues(entity);
-                    _context.SaveChanges();
 
-                    return entity;
-                }
-                catch(Exception)
-                {
-                    throw;
-                }
-            }
-            else
+            if(result == null)
             {
                 return null;
-            }          
+            }                  
+             _context.Entry(result).CurrentValues.SetValues(entity);
+             _context.SaveChanges();
+
+            return entity;            
         }
         public T GetById(long Id)
         {
@@ -66,15 +50,8 @@ namespace WebApiAlternativa.Data.Repository.Generic
             var result = dataset.SingleOrDefault(result => result.Id.Equals(Id));
             if (result != null)
             {
-                try
-                {
-                    dataset.Remove(result);
-                    _context.SaveChanges();
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+                dataset.Remove(result);
+                _context.SaveChanges();
             }
         }
     }

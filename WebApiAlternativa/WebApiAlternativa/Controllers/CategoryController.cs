@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApiAlternativa.Data.Bussiness;
+using System;
+using WebApiAlternativa.Data.Repository.Generic;
 using WebApiAlternativa.Entities;
 
 namespace WebApiAlternativa.Controllers
@@ -9,42 +10,85 @@ namespace WebApiAlternativa.Controllers
 
     public class CategoryController : ControllerBase
     {
-        private readonly ICategoryBusiness _categoryBusiness;
+        
+        private readonly IRepository<Category> _categoryRepository;
 
-        public CategoryController(ICategoryBusiness categoryBusiness)
+        public CategoryController(IRepository<Category> categoryRepository)
         {
-            _categoryBusiness = categoryBusiness;
+            _categoryRepository = categoryRepository;            
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_categoryBusiness.GetAll());
+            try
+            {
+                return Ok(_categoryRepository.GetAll());
+            }
+            catch (Exception)
+            {
+                return StatusCode(500,"");
+            }
         }
         [HttpGet("{Id}")]
         public IActionResult Get(long Id)
         {
-            return Ok(_categoryBusiness.GetById(Id));
+            try
+            {
+                  return Ok(_categoryRepository.GetById(Id));
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "");
+            }
         }
         [HttpPost]
         public IActionResult Post(Category category)
         {
-            return Ok(_categoryBusiness.Add(category));
+            try
+            {
+                _categoryRepository.Add(category);
+                return StatusCode(201);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "");
+            }
         }
         [HttpPut]
         public IActionResult Update([FromBody] Category category)
         {
-            return Ok(_categoryBusiness.Update(category));
+            try
+            {
+                Category result = _categoryRepository.GetById(category.Id);
+
+                if ( result == null)
+                {
+                    return StatusCode(400, "");
+                }
+
+                return Ok(_categoryRepository.Update(category));
+                
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "");
+            }
         }
         [HttpDelete("{Id}")]
         public IActionResult Delete(long Id)
         {
-            if (_categoryBusiness.Delete(Id))
+            try
             {
-                return Ok();
-            }
+                _categoryRepository.Delete(Id);
 
-            return Conflict();
+                return NoContent();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "");
+            }
         }
 
     }

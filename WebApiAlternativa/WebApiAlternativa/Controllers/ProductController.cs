@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApiAlternativa.Data.Bussiness;
+using System;
+using System.Collections.Generic;
+using WebApiAlternativa.Data.Repository.Generic;
 using WebApiAlternativa.Entities;
 
 namespace WebApiAlternativa.Controllers
@@ -8,35 +10,99 @@ namespace WebApiAlternativa.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IProductBusiness _productBusiness;
-        public ProductController (IProductBusiness productBusiness)
+        private readonly IRepository<Product> _productRepository;
+        private readonly IRepository<Category> _categoryRepository;
+        public ProductController (IRepository<Product> productRepository, IRepository<Category> categoryRepository)
         {
-            _productBusiness = productBusiness;
+            _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_productBusiness.GetAll());
+
+            List<Product> products = _productRepository.GetAll();
+
+            if (products == null)
+            {
+                return Ok(products);
+            }
+            //relacionando produtos a categorias
+            foreach (Product product in products)
+            {
+                if (product.CategoryId != null)
+                {
+                    long categoryId = (long)product.CategoryId;
+                    product.Category = _categoryRepository.GetById(categoryId);
+                }
+            }
+            return Ok(products);            
         }
-        [HttpGet("{id}")]
-        public IActionResult Get(long id)
+        [HttpGet("{Id}")]
+        public IActionResult Get(long Id)
         {
-            return Ok(_productBusiness.GetById(id));
+            Product product = _productRepository.GetById(Id);
+            //verifica se existe retorno
+            if (product == null)
+            {
+                return Ok(product);
+            }
+            //verifica se há vinculo com categoria
+            //se sim: inclue categoria em produto
+            if (product.CategoryId != null)
+            {
+                long categoryId = (long)product.CategoryId;
+                product.Category = _categoryRepository.GetById(categoryId);
+            }
+
+            return Ok(product);
         }
         [HttpPost]
         public IActionResult Post([FromBody] Product product)
         {
-            return Ok(_productBusiness.Add(product));
+            try
+            {
+                _productRepository.Add(product);
+                return StatusCode(201);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "");
+            }
+
+            
         }
         [HttpPut]
         public IActionResult Update([FromBody] Product product)
         {
-            return Ok(_productBusiness.Update(product));
+            try
+            {
+                Product result = _productRepository.Update(product);
+                if(result.CategoryId != null)
+                {
+                    result.Category = _categoryRepository.GetById((long)result.CategoryId);
+                }
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+               return StatusCode(500, "");
+            }
         }
         [HttpDelete("{id}")]
-        public void Delete(long id)
+        public IActionResult Delete(long Id)
         {
-            _productBusiness.Delete(id);
+            try
+            {
+                _productRepository.Delete(Id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500,"");
+            }
         }
 
     }
